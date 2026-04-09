@@ -15,9 +15,7 @@ while True:
         user = input("Crie um usuario: ")
         senha = input("Crie uma senha: ")
         usuarios[user] = senha
-        {
-            "lucas":"1234"
-        }
+    
         with open("usuarios.json", "w") as f:  #w escreve no arquivo 
             json.dump(usuarios, f)  #salva dados 
         print("Cadastro realizado!!")
