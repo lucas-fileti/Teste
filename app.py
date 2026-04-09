@@ -1,4 +1,36 @@
-git --version
+import json
+try:
+    with open("usuarios.json", "r") as f:
+        usuarios = json.load(f)
+except:
+    usuarios = {}  #dicionario vazio caso nao tenha nada cadastrado
+
+while True:
+    print("\n     LOGIN     ")
+    print("1 - Login")
+    print("2 - Criar Conta")
+    opcao = input("Escolha: ").strip() #strip corrige bug de espaco 
+
+    if opcao == "2":
+        user = input("Crie um usuario: ")
+        senha = input("Crie uma senha: ")
+        usuarios[user] = senha
+        {
+            "lucas":"1234"
+        }
+        with open("usuarios.json", "w") as f:  #w escreve no arquivo 
+            json.dump(usuarios, f)  #salva dados 
+        print("Cadastro realizado!!")
+
+    elif opcao == "1":
+        user = input("Usuario: ")
+        senha = input("Senha: ")
+    if user in usuarios and usuarios[user] == senha:
+        print("Bem Vindo !!")
+        break
+    else:
+        print ("Usuario ou senha incorretos")
+        
 saldo = 0
 registro = []
 
