@@ -1,4 +1,5 @@
 import json
+
 try:
     with open("usuarios.json", "r") as f:
         usuarios = json.load(f)
@@ -23,17 +24,17 @@ while True:
     elif opcao == "1":
         user = input("Usuario: ")
         senha = input("Senha: ")
-    if user in usuarios and usuarios[user] == senha:
-        print("Bem Vindo !!")
-        break
-    else:
-        print ("Usuario ou senha incorretos")
+        if user in usuarios and usuarios[user] == senha:
+            print("Bem Vindo !!")
+            break
+        else:
+            print ("Usuario ou senha incorretos")
         
 saldo = 0
 registro = []
 
 while True:
-    print("\n ---Menu---")
+    print("\n    Menu   ")
     print("\n1 - Entradas")
     print("2 - Saidas")
     print("3 - Saldo")
